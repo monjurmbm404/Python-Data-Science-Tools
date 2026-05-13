@@ -1,151 +1,106 @@
-# 📘 NumPy Day 1 — Introduction & Environment
 
----
+# 📅 Day 1 — Introduction + Environment
 
-## 📖 🔹 What is NumPy?
+## 🎯 Objective
+- আজকে NumPy কী এবং কেন ব্যবহার করা হয় তা শেখা  
+- Python list আর NumPy array-এর মধ্যে difference বোঝা  
+- NumPy installation, import, basic array creation, এবং element-wise operation concept clear করা  
 
-- 🧠 NumPy (Numerical Python) is a powerful Python library for numerical computing
-- 📊 It helps you work with arrays (1D, 2D, 3D) efficiently
-- ⚡ It performs fast mathematical operations on large datasets
-- 🤖 It is widely used in Data Science, Machine Learning, and AI
+## 📚 Topics Covered
+- NumPy কী  
+- NumPy কেন ব্যবহার করা হয়  
+- installation / import  
+- Python list vs NumPy array  
+- basic array creation  
+- element-wise operation concept  
 
----
-
-## ❓ 🔹 Why NumPy?
-
-- 🚀 Much faster than Python lists
-- 🔢 Supports element-wise mathematical operations
-- 📦 Handles large data efficiently
-- 🤖 Essential for Machine Learning & Data Analysis
-- 🧮 Built-in functions for complex calculations
-
----
-
-## ⚠️ 🔹 Problem with Python List
-
-```python
-arr = [1, 2, 3]
-
-print(arr * 5)
-```
-
-### ❌ Output:
-
-```
-[1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
-```
-
-- 😕 Instead of multiplying, it **repeats the list**
-- ❌ Not suitable for mathematical operations
-
----
-
-## ✅ 🔹 Solution with NumPy
-
-```python
-import numpy as np
-
-arr = np.array([1, 2, 3])
-
-print(arr * 5)
-```
-
-### ✅ Output:
-
-```
-[ 5 10 15]
-```
-
-- 🎯 Each element is multiplied individually
-- ⚡ Fast and efficient
-
----
-
-## ⚙️ 🔹 Installation & Import
-
-### 📦 Install NumPy
-
+## 📁 Project Structure
 ```bash
-pip install numpy
-```
+day-1/
+│── 01_install_import.py
+│── 02_why_numpy.py
+│── 03_array_creation.py
+│── 04_elementwise_operation.py
+│── 05_basic_operations_compare.py
+│── 06_real_life_idea.py
+│── README.md
+````
 
-### 📥 Import NumPy
+## 📊 Dataset
+
+* File Name: data.csv
+* Description: এই day-তে কোনো dataset use করা হয়নি, কারণ এটা NumPy introduction day
+* Columns:
+
+  * column1 → N/A
+  * column2 → N/A
+
+---
+
+## 💻 Code Breakdown (File by File)
+
+### 📄 1. 01_install_import.py
+
+#### 🔹 Purpose
+
+* NumPy ব্যবহার করতে হলে আগে import করতে হয়
+* `np` হলো NumPy-এর short alias, যা convention হিসেবে ব্যবহার করা হয়
+
+#### 🧾 Code
 
 ```python
-import numpy as np
-```
+import numpy as np  # np হলো short নাম (convention)
 
-- 🔹 `np` is a standard short name (alias)
-
----
-
-## 🧱 🔹 Syntax / Concept Section
-
-- 🧩 `np.array()` → create a NumPy array
-- 🔢 `arr * number` → element-wise multiplication
-- ➕ `arr + number` → element-wise addition
-- 📐 Supports multi-dimensional arrays
-
----
-
-## 💻 🔹 Code Examples (Beginner Friendly)
-
----
-
-### 📁 Example 1: Install & Import
-
-```python
-# Import NumPy library
-import numpy as np
-
-# Check version (optional)
 print(np.__version__)
 ```
 
-👉 🧠 Explanation:
+#### 🧠 Explanation
 
-- `import numpy as np` → loads NumPy
-- `np.__version__` → shows installed version
+* Line 1 → NumPy import করা হয়েছে
+* Line 2 → version check করা হচ্ছে
+* Logic → library ready কিনা verify করা হচ্ছে
 
 ---
 
-### 📁 Example 2: Python List vs NumPy
+### 📄 2. 02_why_numpy.py
+
+#### 🔹 Purpose
+
+* Python list vs NumPy array difference বোঝা
+
+#### 🧾 Code
 
 ```python
-# Python list
 arr = [1, 2, 3]
+print(arr * 5)
 
-print(arr * 5)  # repeats list
-
-
-# NumPy array
 import numpy as np
-
 arr_np = np.array([1, 2, 3])
-
-print(arr_np * 5)  # multiplies elements
+print(arr_np * 5)
 ```
 
-👉 🧠 Explanation:
+#### 🧠 Explanation
 
-- List → repeats values
-- NumPy → multiplies each value individually
+* List multiply করলে repeat হয়
+* NumPy array multiply করলে element-wise operation হয়
+* NumPy mathematical computing-এর জন্য optimized
 
 ---
 
-### 📁 Example 3: Array Creation
+### 📄 3. 03_array_creation.py
+
+#### 🔹 Purpose
+
+* 1D এবং 2D array তৈরি করা
+
+#### 🧾 Code
 
 ```python
 import numpy as np
 
-# 1D array
-arr1 = np.array([1, 2, 3, 4, 5])
+arr1 = np.array([1, 2, 3, 4])
 print(arr1)
 
-# Check type
-print(type(arr1))  # numpy.ndarray
-
-# 2D array (matrix)
 arr2 = np.array([
     [1, 2, 3],
     [4, 5, 6]
@@ -153,90 +108,151 @@ arr2 = np.array([
 print(arr2)
 ```
 
-👉 🧠 Explanation:
+#### 🧠 Explanation
 
-- `np.array()` creates array
-- 1D = single row
-- 2D = rows + columns (matrix)
+* 1D array = simple list-like structure
+* 2D array = matrix structure
+* NumPy structured data handle করে
 
 ---
 
-### 📁 Example 4: Element-wise Operations
+### 📄 4. 04_elementwise_operation.py
+
+#### 🔹 Purpose
+
+* element-wise operation বোঝা
+
+#### 🧾 Code
 
 ```python
 import numpy as np
 
 arr = np.array([1, 2, 3])
 
-print(arr + 2)   # addition
-print(arr * 3)   # multiplication
-print(arr ** 2)  # square
+print(arr + 2)
+print(arr * 3)
+print(arr ** 2)
 ```
 
-👉 🧠 Explanation:
+#### 🧠 Explanation
 
-- NumPy automatically applies operation to **each element**
-- No loop needed → faster code
+* প্রতিটা element আলাদা ভাবে operate হয়
+* loop ছাড়া computation করা যায়
+* NumPy vectorized operation support করে
 
 ---
 
-### 📁 Example 5: List vs NumPy Operation
+### 📄 5. 05_basic_operations_compare.py
+
+#### 🔹 Purpose
+
+* list vs NumPy performance difference বোঝা
+
+#### 🧾 Code
 
 ```python
-# Python list
 lst = [1, 2, 3]
-lst_result = [x * 2 for x in lst]
-print(lst_result)
+print([x * 2 for x in lst])
 
-
-# NumPy array
 import numpy as np
 arr = np.array([1, 2, 3])
-
 print(arr * 2)
 ```
 
-👉 🧠 Explanation:
+#### 🧠 Explanation
 
-- List → needs loop
-- NumPy → direct operation
+* List → manual loop লাগে
+* NumPy → direct operation
+* Code short + fast
 
 ---
 
-## 🌍 🔹 Real-Life Example
+### 📄 6. 06_real_life_idea.py
+
+#### 🔹 Purpose
+
+* real-life marks calculation example
+
+#### 🧾 Code
 
 ```python
 import numpy as np
 
 marks = np.array([50, 60, 70])
-
-# Add bonus marks
-updated_marks = marks + 5
-
-print(updated_marks)
+print(marks + 5)
 ```
 
-### ✅ Output:
+#### 🧠 Explanation
 
-```
-[55 65 75]
-```
-
-👉 🧠 Explanation:
-
-- Each student gets +5 marks
-- NumPy applies it to all values automatically
+* marks data array হিসেবে store করা হয়েছে
+* bonus marks add করা হয়েছে
+* real-world data processing সহজ হয়
 
 ---
 
-## 🎯 🔹 Summary
+## ⚙️ Implementation Flow
 
-- ✅ Learned what NumPy is
-- ✅ Understood why NumPy is important
-- ✅ Compared Python list vs NumPy array
-- ✅ Learned how to create arrays
-- ✅ Understood element-wise operations
-- ✅ Practiced real-life example
+* NumPy install এবং import করা হয়েছে
+* list vs array difference বোঝা হয়েছে
+* array creation practice করা হয়েছে
+* element-wise operation শেখা হয়েছে
+* real-life example apply করা হয়েছে
+
+---
+
+## 📈 Output / Result
+
+* NumPy basic understanding তৈরি হয়েছে
+* array operation clear হয়েছে
+* vectorized computation idea এসেছে
+
+---
+
+## 🚀 What I Learned
+
+* NumPy is faster than Python list for math
+* array supports vectorized operation
+* real-life data easily process করা যায়
+
+---
+
+## 🧠 Key Concepts (Quick Revision)
+
+* np.array() → array creation
+* list * n → repetition
+* array * n → element-wise multiply
+* NumPy = optimized numerical computing
+
+---
+
+## 📝 Notes
+
+* list vs array behavior different
+* np alias standard practice
+* small dataset দিয়ে practice করা best
+
+---
+
+## 📌 Next Day Preview
+
+* 1D array indexing
+* slicing
+* modification
+
+---
+
+## ⭐ Bonus
+
+### 🔥 Improvements Ideas
+
+* marks calculator extend করা যায়
+* average, max, min add করা যায়
+
+### 🧪 Practice Ideas
+
+* নিজের marks নিয়ে array বানাও
+* total + average বের করো
+* list vs NumPy compare করো
 
 ---
 
