@@ -172,6 +172,10 @@ After completing this repository, you will be able to:
 
 ---
 
+## 📄 License
+
+## This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
 # Author
 
 **Engr. Md Monjur Bakth Mazumder**
